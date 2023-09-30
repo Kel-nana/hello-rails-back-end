@@ -1,14 +1,16 @@
-languages = ["English", "Spanish", "French", "German", "Italian"]
-greetings = ["Hello", "Hola", "Bonjour", "Hallo", "Ciao"]
+# frozen_string_literal: true
+
+languages = %w[English Spanish French German Italian]
+greetings = %w[Hello Hola Bonjour Hallo Ciao]
 
 languages.each_with_index do |lang, index|
-    Message.create(
-      language: lang,
-      greeting: greetings[index]
-    )
-  end
+  Message.create(
+    language: lang,
+    greeting: greetings[index]
+  )
+end
 
-  #wrong logic here
+# wrong logic here
 # languages.each do |lang|
 #     Message.create(language: lang)
 # end
