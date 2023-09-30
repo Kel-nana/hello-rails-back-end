@@ -647,3 +647,17 @@ Processing by Api::MessagesController#random_greeting as HTML
 Completed 200 OK in 38ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 746)
 
 
+Started GET "//api/random_greeting" for 127.0.0.1 at 2023-09-29 21:40:50 +0300
+Processing by Api::MessagesController#random_greeting as HTML
+  [1m[36mMessage Load (2.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:3:in `random_greeting'
+Completed 200 OK in 144ms (Views: 0.2ms | ActiveRecord: 18.9ms | Allocations: 3692)
+
+
+Started GET "//api/random_greeting" for 127.0.0.1 at 2023-09-29 21:40:50 +0300
+Processing by Api::MessagesController#random_greeting as HTML
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/messages_controller.rb:3:in `random_greeting'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 746)
+
+
